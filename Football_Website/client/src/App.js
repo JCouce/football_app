@@ -1,13 +1,21 @@
 import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
+
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
+import Teams from './components/Teams';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Home />
+      <BrowserRouter>
+          <div>
+            <Header />
+            <Route exact={true} path="/" component={Home} />
+            <Route exact={true} path="/teams" component={Teams} />
+          </div>
+        </BrowserRouter>
     </div>
   );
 }

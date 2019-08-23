@@ -1,33 +1,44 @@
-.App {
-  text-align: center;
+:root {
+  --yellow: #ffc600;
+  --black: #272727;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+  background: var(--black);
+  /* A system font stack so things load nice and quick! */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* font-weight: 900; */
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+*{
+  margin: 0;
+padding: 0;
+border: 0;
+  box-sizing: border-box;
+vertical-align: baseline;
 }
 
-.App-link {
-  color: #61dafb;
+a, a:link, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul li{
+  list-style: none;
 }

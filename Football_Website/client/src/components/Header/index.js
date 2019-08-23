@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './header.css';
 
 export class Header extends Component {
     render() {
         return (
             <div className="headerWrapper">
-                <div className="headerItem item1 selected">Logo</div>
-                <div className="headerItem item2">Go Home</div>
-                <div className="headerItem item3">Teams</div>
+                <Link to={'/'} className="headerItem item1 selected">Logo</Link>
+                <Link to={'/'} className="headerItem item2">Go Home</Link>
+                <Link to={'/teams'} className="headerItem item3">Teams</Link>
             </div>
         );
     }
