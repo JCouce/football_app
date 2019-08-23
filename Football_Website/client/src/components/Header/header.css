@@ -1,0 +1,9 @@
+.headerWrapper{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.selected {
+    background: #888;
+}
