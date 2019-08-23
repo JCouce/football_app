@@ -8,6 +8,6 @@ The degree of difference between all solutions will be assessed.
 
 The same language must be used for all solutions. 
 
-You can choose any programming language, but it will be valued if it is solved for several languages.
+You can choose any programming language, but it will be valued if it is solved for several languages. At least 10 different ways of using the same programming language.
 
 Have fun!

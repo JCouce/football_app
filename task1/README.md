@@ -8,7 +8,7 @@ You must use this [public api](https://www.thesportsdb.com/api.php) to get all t
 
 https://www.thesportsdb.com/api.php
 
-The website must have a menu with two options and show the option selected (if any):
+The website must have a menu with two options and show the option selected (if any) with any mark like bold or underline the title selected option:
 
 -  **Go Home:** Show home page.
 -  **Teams:** Go to Team page.
@@ -16,7 +16,7 @@ The website must have a menu with two options and show the option selected (if a
 It must have 3 page:
 
 -  **Home:** Show at least 2 widgets to show any results and refresh these results every 15. minutes.
-    -  Show the 5 teams with more goals in the current (or previous league if no data) league.
+    -  Show the 5 teams with more goals in the current league (or previous league if no data).
     -  Free: Choose any interesting results to show.
 -  **Team page:** 
     -  A list of all the teams of the Spanish Soccer name + team badge. With some 2 o more options to sort teams, for example the option to sort by name.
