@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Spinner from '../Spinner/index';
+import { Link } from 'react-router-dom';
+import './playerList.css'
 
 export class PlayerList extends Component {
 
@@ -8,9 +10,14 @@ export class PlayerList extends Component {
             return <Spinner />
         }
         const playerList = this.props.players.player;
+        console.log(playerList)
         let players = playerList.map((el,i) => {
             return (
-                <div key={el.idPlayer}>{el.strPlayer}</div>
+                <Link className="player" to={'/player/' + el.idPlayer} key={el.idPlayer}>
+                    <h3 className="name">{el.strPlayer}</h3>
+                    <img className="image" src={el.strThumb} alt="player"/>
+                    <span>{el.strPosition}</span>
+                </Link>
             )
         })
         return players;
@@ -18,7 +25,7 @@ export class PlayerList extends Component {
 
     render() {
         return (
-            <div style={{display:this.props.shown === this.props.teamId?'block':'none'}}>
+            <div className="playerList" style={{display:this.props.shown === this.props.teamId?'grid':'none'}}>
                 {this.renderPlayers()}
             </div>
         );  
