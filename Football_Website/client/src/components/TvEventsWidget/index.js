@@ -3,6 +3,8 @@ import './tvEventsWidget.css';
 
 export class TvEventsWidget extends Component {
     renderTvEvents = () =>{
+        // console.log('hola')
+        // console.log(this.props);
         const eventList = this.props.events;
         let events = eventList.map((el,i) => {
             return (

@@ -1,23 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import  {fetchSpanishTeams} from '../../actions';
+import Spinner from '../Spinner/index';
+import './teams.css'
 
 export class Teams extends Component {
     componentDidMount() {
-        this.props.fetchFootbal();
+        this.props.fetchSpanishTeams();
+    }
+    renderTeams = () =>{
+        const teamList = this.props.spanishTeams.teams;
+        let teams = teamList.map((el,i) => {
+            return (
+                <div key={el.idTeam} className="team">
+                    <img className="logo" src={el.strTeamBadge} alt="logo" />
+                    <h1>{el.strAlternate}</h1>
+                </div>
+            )
+        })
+        return teams;
     }
     render() {
-        console.log('HOLA BB');
-        console.log(this.props);
+        if (!this.props.spanishTeams) {
+            return <Spinner/>
+        }
+        // console.log('HOLA BB');
+        // console.log(this.props.spanishTeams.teams[0]);
         return (
-            <div>
-                Hey hey teams!
+            <div className="teamsWrapper">
+                asd
             </div>
         );
     }
 }
-function mapStateToProps({footbal}) {
-    return { footbal }   
+function mapStateToProps({spanishTeams}) {
+    return { spanishTeams }   
 }
 
-export default connect(mapStateToProps, actions)(Teams);
+export default connect(mapStateToProps, fetchSpanishTeams)(Teams);
