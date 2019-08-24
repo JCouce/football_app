@@ -1,0 +1,20 @@
+.shows {
+    background: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding:30px;
+    border:8px solid var(--yellow);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.title{
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+.show{
+    padding:20px;
+}
+.logo{
+    width: 50px;
+}

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_FOOTBAL, FETCH_LEAGUE_STATS} from './types';
+import { FETCH_FOOTBAL, FETCH_LEAGUE_STATS, FETCH_TV_SHOWS } from './types';
 
 export const fetchFootbal = () => async dispatch => {
     const res = await axios.get('https://www.thesportsdb.com/api/v1/json/1/searchevents.php?e=Arsenal_vs_Chelsea');
@@ -16,8 +16,6 @@ export const fetchTvShows = () => async dispatch => {
 
     // const today = new Date();
     // let date = (today.getFullYear()) + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
     const res = await axios.get('https://www.thesportsdb.com/api/v1/json/1/eventstv.php?d=2018-07-07');
-  
-    dispatch({ type: FETCH_LEAGUE_STATS, payload: res.data });
+    dispatch({ type: FETCH_TV_SHOWS, payload: res.data });
 };

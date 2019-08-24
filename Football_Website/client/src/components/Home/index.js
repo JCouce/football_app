@@ -6,11 +6,13 @@ import { Event } from '../EventWidget/index';
 import './home.css'
 import Spinner from '../Spinner/index';
 import TopTeamsWidget from '../TopTeamsWidget';
+import TvEventsWidget from '../TvEventsWidget';
 
 export class Home extends Component {
     componentDidMount() {
         this.props.fetchLeagueStats();
         this.props.fetchFootbal();
+        this.props.fetchTvShows();
     }
     renderWidgets = () => {
         const eventList = this.props.footbal.event;
@@ -37,18 +39,22 @@ export class Home extends Component {
         if (!this.props.leagueStats) {
             return <Spinner/>
         }
+        if (!this.props.shows) {
+            return <Spinner/>
+        }
 
         return (
             <div className="homeWrapper">
                 <TopTeamsWidget teams={this.props.leagueStats.table}/>
+                <TvEventsWidget events={this.props.shows.tvevents} />
                 {this.renderWidgets()}
             </div>
         );
     }
 }
 
-function mapStateToProps({footbal, leagueStats}) {
-  return {footbal, leagueStats};
+function mapStateToProps({footbal, leagueStats, shows}) {
+  return {footbal, leagueStats, shows};
 }
 
 export default connect (mapStateToProps, actions) (Home);
