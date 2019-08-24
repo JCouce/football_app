@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import  {fetchSpanishTeams} from '../../actions';
+import * as actions from '../../actions';
 import Spinner from '../Spinner/index';
 import './teams.css'
 
@@ -24,11 +24,9 @@ export class Teams extends Component {
         if (!this.props.spanishTeams) {
             return <Spinner/>
         }
-        // console.log('HOLA BB');
-        // console.log(this.props.spanishTeams.teams[0]);
         return (
             <div className="teamsWrapper">
-                asd
+                {this.renderTeams()}
             </div>
         );
     }
@@ -37,4 +35,4 @@ function mapStateToProps({spanishTeams}) {
     return { spanishTeams }   
 }
 
-export default connect(mapStateToProps, fetchSpanishTeams)(Teams);
+export default connect(mapStateToProps, actions)(Teams);

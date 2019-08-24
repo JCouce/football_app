@@ -16,7 +16,7 @@ export const fetchTvShows = () => async dispatch => {
 
     // const today = new Date();
     // let date = (today.getFullYear()) + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    const res = await axios.get('https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4335');
+    const res = await axios.get('https://www.thesportsdb.com/api/v1/json/1/eventstv.php?d=2018-07-07');
     dispatch({ type: FETCH_TV_SHOWS, payload: res.data });
 };
 export const fetchSpanishTeams = () => async dispatch => {
