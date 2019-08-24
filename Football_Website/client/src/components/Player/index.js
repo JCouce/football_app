@@ -13,7 +13,6 @@ export class Player extends Component {
     if (!this.props.player) {
       return <Spinner />;
     }
-    console.log (this.props.player);
     return (
       <div className="playerWrapper">
         <div className="data personalData">

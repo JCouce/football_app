@@ -1,16 +1,17 @@
-.logo{
-    max-width: 40px;
-}
-.teamsWrapper{
-    padding:10px 50px;
+.mainTeamsWrapper{
     display:grid;
     grid-template-columns: 1fr;
     grid-gap: 35px;
+    padding: 10px 120px;
 }
-.team{
+.sorting{
     display: flex;
     justify-content: space-between;
-    padding:10px 30px;
-    border:8px solid var(--yellow);
-    cursor: pointer;
+}
+.sorting span{
+    border: 2px solid var(--yellow);
+    padding:10px 20px;
+    background: #fff;
+    font-weight: bold;
+    cursor:pointer;
 }

@@ -10,7 +10,6 @@ export class PlayerList extends Component {
             return <Spinner />
         }
         const playerList = this.props.players.player;
-        console.log(playerList)
         let players = playerList.map((el,i) => {
             return (
                 <Link className="player" to={'/player/' + el.idPlayer} key={el.idPlayer}>
