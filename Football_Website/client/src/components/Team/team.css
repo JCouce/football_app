@@ -1,0 +1,16 @@
+.logo{
+    max-width: 40px;
+}
+.teamsWrapper{
+    padding:10px 50px;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap: 35px;
+}
+.team{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 30px;
+    border:8px solid var(--yellow);
+    cursor: pointer;
+}

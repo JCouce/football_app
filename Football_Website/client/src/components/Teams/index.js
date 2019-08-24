@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import Spinner from '../Spinner/index';
 import './teams.css'
+import Team from '../Team';
 
 export class Teams extends Component {
     componentDidMount() {
@@ -12,10 +13,12 @@ export class Teams extends Component {
         const teamList = this.props.spanishTeams.teams;
         let teams = teamList.map((el,i) => {
             return (
-                <div key={el.idTeam} className="team">
-                    <img className="logo" src={el.strTeamBadge} alt="logo" />
-                    <h1>{el.strAlternate}</h1>
-                </div>
+                <Team 
+                    key={el.idTeam} 
+                    name={el.strAlternate} 
+                    altName={el.strTeam} 
+                    badge={el.strTeamBadge} 
+                    teamId={el.idTeam} />
             )
         })
         return teams;
