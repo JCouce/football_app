@@ -1,27 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './team.css';
 import PlayerList from '../PlayerList';
-export class Team extends Component {
-  constructor (props) {
-    super (props);
-    this.state = {
-        showList:false
-    };
-  }
-  showPlayerList = () => {
-    this.setState ({showList: !this.state.showList});
-  };
-  render () {
-    return (
-      <div className="teamListWrapper">
-        <div onClick={this.showPlayerList} className="team">
-          <img className="logo" src={this.props.badge} alt="logo" />
-          <h1>{this.props.name ? this.props.name : this.props.altName}</h1>
+
+export const Team = (props) => {
+    return(
+        <div className="teamListWrapper">
+        <div onClick={() =>props.click(props.teamId)} className="team">
+          <img className="logo" src={props.badge} alt="logo" />
+          <h1>{props.name ? props.name : props.altName}</h1>
         </div>
-        <PlayerList teamId={this.props.teamId} show={this.state.showList} />
+        <PlayerList teamId={props.teamId} shown={props.shown} players={props.players}/>
       </div>
-    );
-  }
+    )
 }
 
-export default Team;
+export default Team

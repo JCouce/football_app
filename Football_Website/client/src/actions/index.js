@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_FOOTBAL, FETCH_LEAGUE_STATS, FETCH_TV_SHOWS, FETCH_SPANISH_TEAMS } from './types';
+import { FETCH_FOOTBAL, FETCH_LEAGUE_STATS, FETCH_TV_SHOWS, FETCH_SPANISH_TEAMS, FETCH_PLAYERS_ID } from './types';
 
 export const fetchFootbal = () => async dispatch => {
     const res = await axios.get('https://www.thesportsdb.com/api/v1/json/1/searchevents.php?e=Arsenal_vs_Chelsea');
@@ -23,4 +23,9 @@ export const fetchSpanishTeams = () => async dispatch => {
     const res = await axios.get('https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4335');
 
     dispatch({ type: FETCH_SPANISH_TEAMS, payload: res.data });
+};
+export const fetchPlayersById = (id) => async dispatch => {
+    const res = await axios.get('https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=' + id);
+
+    dispatch({ type: FETCH_PLAYERS_ID, payload: res.data });
 };

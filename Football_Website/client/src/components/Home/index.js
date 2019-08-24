@@ -32,8 +32,6 @@ export class Home extends Component {
     }
 
     render() {
-        console.log(this.props)
-        console.log(this.props.shows)
         if (!this.props.footbal) {
             return <Spinner/>
         }
