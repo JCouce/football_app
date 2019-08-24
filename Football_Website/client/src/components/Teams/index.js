@@ -28,7 +28,11 @@ export class Teams extends Component {
     }
 
     showPlayerList = (id) => {
-        this.setState ({shown: id});
+        if (id === this.state.shown) {
+            this.setState ({shown: false});
+        } else {
+            this.setState ({shown: id});
+        }
     };
     
     

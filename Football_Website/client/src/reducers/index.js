@@ -4,6 +4,7 @@ import leagueStatsReducer from './leagueStatsReducer';
 import tvShowsReducer from './tvShowsReducer';
 import spanishTeamsReducer from './spanishTeamsReducer';
 import playersTeamReducer from './playersTeamReducer';
+import playerReducer from './playerReducer';
 
 
 export default combineReducers ({
@@ -11,5 +12,6 @@ export default combineReducers ({
   leagueStats: leagueStatsReducer,
   shows: tvShowsReducer,
   spanishTeams: spanishTeamsReducer,
-  players: playersTeamReducer
+  players: playersTeamReducer,
+  player:playerReducer
 });

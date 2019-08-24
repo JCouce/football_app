@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Teams from './components/Teams';
+import Player from './components/Player';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Header />
             <Route exact={true} path="/" component={Home} />
             <Route exact={true} path="/teams" component={Teams} />
+            <Route path="/player/:id" component={Player} />
           </div>
         </BrowserRouter>
     </div>

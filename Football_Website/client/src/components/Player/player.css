@@ -1,0 +1,21 @@
+.playerWrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    padding: 20px 160px;
+}
+.data {
+    padding:30px;
+    border:8px solid var(--yellow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 0.5fr;
+}
+.photo{
+    width: 50%;
+}
+.country{
+    margin-top: 20px;
+}

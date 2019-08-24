@@ -7,7 +7,7 @@ export class TopTeamsWidget extends Component {
         let leaagueStatsFiltered = leagueStatsList.sort((a,b) => b.goalsfor-a.goalsfor).slice(0,5);
         let leagueStats = leaagueStatsFiltered.map((el,i) => {
             return (
-            <li className="team" key={'topGoalsTeam' + i}>
+            <li className="topTeam" key={'topGoalsTeam' + i}>
                 <span className="teamName">{el.name}</span> <span className="goalsFor">{el.goalsfor} goals!</span>
             </li>)
         })
