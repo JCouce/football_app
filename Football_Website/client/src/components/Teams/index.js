@@ -64,10 +64,10 @@ export class Teams extends Component {
     }
     if (this.state.sort === 'name-asc') {
       teamList = teamList.sort ((a, b) => {
-        if (a.strAlternate < b.strAlternate) {
+        if (a.strTeam < b.strTeam) {
           return -1;
         }
-        if (a.strAlternate > b.strAlternate) {
+        if (a.strTeam > b.strTeam) {
           return 1;
         }
         return 0;
@@ -75,10 +75,10 @@ export class Teams extends Component {
     }
     if (this.state.sort === 'name-desc') {
       teamList = teamList.sort ((a, b) => {
-        if (b.strAlternate < a.strAlternate) {
+        if (b.strTeam < a.strTeam) {
           return -1;
         }
-        if (b.strAlternate > a.strAlternate) {
+        if (b.strTeam > a.strTeam) {
           return 1;
         }
         return 0;
@@ -94,8 +94,7 @@ export class Teams extends Component {
       return (
         <Team
           key={el.idTeam}
-          name={el.strAlternate}
-          altName={el.strTeam}
+          name={el.strTeam}
           badge={el.strTeamBadge}
           teamId={el.idTeam}
           click={this.showPlayerListHandler}
