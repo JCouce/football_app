@@ -25,6 +25,7 @@ export class PlayerList extends Component {
     render() {
         return (
             <div className="playerList" style={{display:this.props.shown === this.props.teamId?'grid':'none'}}>
+                <div className="teamDesc">{this.props.teamDesc}</div>
                 {this.renderPlayers()}
             </div>
         );  

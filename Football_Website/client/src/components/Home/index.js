@@ -10,9 +10,14 @@ import TvEventsWidget from '../TvEventsWidget';
 
 export class Home extends Component {
     componentDidMount() {
+        //refresh every 15 mins
+        this.interval = setInterval(() => this.setState({ lastRefresh: Date.now() }), 900000);
         this.props.fetchLeagueStats();
         this.props.fetchFootbal();
         this.props.fetchTvShows();
+    }
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
     renderWidgets = () => {
         const eventList = this.props.footbal.event;

@@ -14,3 +14,10 @@
 .image{
     width: 100%;
 }
+.teamDesc{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    border:1px solid var(--yellow);
+    background: #fff;
+    padding: 20px;
+}
