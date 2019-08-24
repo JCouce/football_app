@@ -2,7 +2,7 @@
     background: #fff;
     display: flex;
     flex-flow: row wrap;
-    margin: 20px;
+
     padding:30px;
     border:8px solid var(--yellow)
 }

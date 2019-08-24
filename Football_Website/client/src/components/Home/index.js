@@ -2,48 +2,53 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-import { Event } from '../Event/index';
+import { Event } from '../EventWidget/index';
 import './home.css'
 import Spinner from '../Spinner/index';
+import TopTeamsWidget from '../TopTeamsWidget';
 
 export class Home extends Component {
-    //TODO :: CAMBIAR EL COMPONENTE A GRID CSS DEJAR UN HEADER CON 
-    // EL FREE WIDGET Y HACER UN GRID DE DOS ELEMENTOS PARA LO DEMÁS
     componentDidMount() {
+        this.props.fetchLeagueStats();
         this.props.fetchFootbal();
     }
     renderWidgets = () => {
         const eventList = this.props.footbal.event;
-        console.log(eventList);
-        let events = eventList.map(element => {
+        let events = eventList.map(el => {
             return <Event
-                key={element.idEvent}
-                name={element.strEvent}
-                awayScore={element.intAwayScore}
-                homeScore={element.intHomeScore}
-                awayName={element.strAwayTeam}
-                homeName={element.strHomeTeam}
-                poster={element.strPoster}
-                desc={element.strDescriptionEN}
+                key={el.idEvent}
+                name={el.strEvent}
+                awayScore={el.intAwayScore}
+                homeScore={el.intHomeScore}
+                awayName={el.strAwayTeam}
+                homeName={el.strHomeTeam}
+                poster={el.strPoster}
+                desc={el.strDescriptionEN}
             />
         });
         return events;
     }
+
     render() {
+        console.log(this.props)
         if (!this.props.footbal) {
+            return <Spinner/>
+        }
+        if (!this.props.leagueStats) {
             return <Spinner/>
         }
 
         return (
             <div className="homeWrapper">
+                <TopTeamsWidget teams={this.props.leagueStats.table}/>
                 {this.renderWidgets()}
             </div>
         );
     }
 }
 
-function mapStateToProps({footbal}) {
-  return {footbal};
+function mapStateToProps({footbal, leagueStats}) {
+  return {footbal, leagueStats};
 }
 
 export default connect (mapStateToProps, actions) (Home);

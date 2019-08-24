@@ -1,7 +1,7 @@
 .homeWrapper {
+    padding:10px 50px;
     display:grid;
     grid-template-columns: 1fr 1fr;
-    /* display:flex;
-    align-items: center;
-    justify-content: space-around; */
+    grid-gap: 35px;
+
 }
