@@ -19,3 +19,11 @@
 .country{
     margin-top: 20px;
 }
+
+@media only screen and (max-width : 526px) {
+    .playerWrapper {
+        padding: 0;
+        grid-template-columns: 1fr;
+    }
+}
+
