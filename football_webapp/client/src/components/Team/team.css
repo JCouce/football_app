@@ -1,0 +1,11 @@
+.logo{
+    max-width: 40px;
+}
+.team{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 30px;
+    border:6px solid var(--yellow);
+    cursor: pointer;
+    border-radius: 10px;
+}

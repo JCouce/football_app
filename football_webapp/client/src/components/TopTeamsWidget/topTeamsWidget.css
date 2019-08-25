@@ -1,0 +1,24 @@
+.topTeamsWidget {
+    background: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding:30px;
+    border:8px solid var(--yellow);
+    text-align: center;
+
+}
+
+.topTeam{
+    border: 2px solid var(--yellow);
+    margin:3px;
+    border-radius: 5px;
+    padding: 5px 5px 5px 50px;
+    background: #fff;;
+    color: var(--black);
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.goalsFor{
+    margin-right: 20px;
+}

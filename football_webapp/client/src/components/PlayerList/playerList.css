@@ -1,0 +1,37 @@
+.player {
+    border: 1px solid var(--yellow);
+    background: #fff;
+    padding:10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.playerList{
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 10px;
+    padding:10px;
+}
+.image{
+    width: 100%;
+}
+.teamDesc{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    border:1px solid var(--yellow);
+    background: #fff;
+    padding: 20px;
+}
+
+
+@media only screen and (max-width : 1006px) {
+    .playerList {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media only screen and (max-width : 426px) {
+    .playerList {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+

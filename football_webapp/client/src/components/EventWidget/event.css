@@ -1,0 +1,27 @@
+.eventWrapper {
+    background: #fff;
+    display: flex;
+    flex-flow: row wrap;
+
+    padding:30px;
+    border:8px solid var(--yellow)
+}
+.eventWrapper > .eventTitle {
+    flex: 1 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+  
+.poster{
+    flex: 1 0 0;
+    max-width: 40%;
+}
+.results {
+    margin-left: 10px;
+    max-width: 50%;
+}
+.description{
+    margin-top: 20px;
+    max-height: 100px;
+    overflow: scroll;
+}

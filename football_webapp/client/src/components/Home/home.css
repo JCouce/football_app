@@ -1,0 +1,17 @@
+.homeWrapper {
+    padding:10px 50px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 35px;
+
+}
+
+@media only screen and (max-width : 426px) {
+        .homeWrapper {
+            display:flex;
+            flex-direction: column;
+            padding: 0;
+            grid-template-columns: none;
+        }
+    }
+    
