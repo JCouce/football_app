@@ -90,7 +90,6 @@ export class Teams extends Component {
   renderTeams = () => {
     let teamList = this.props.spanishTeams.teams;
     teamList = this.teamSorting (teamList);
-    console.log(teamList)
     let teams = teamList.map ((el, i) => {
       return (
         <Team

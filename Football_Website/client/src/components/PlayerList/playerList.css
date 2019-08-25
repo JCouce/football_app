@@ -21,3 +21,17 @@
     background: #fff;
     padding: 20px;
 }
+
+
+@media only screen and (max-width : 1006px) {
+    .playerList {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media only screen and (max-width : 426px) {
+    .playerList {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+

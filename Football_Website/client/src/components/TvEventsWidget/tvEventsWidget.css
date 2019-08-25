@@ -18,3 +18,25 @@
 .logo{
     width: 50px;
 }
+@media only screen and (max-width : 550px) {
+    .shows{
+        background: white;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        padding: 30px;
+        border: 8px solid var(--yellow);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width : 354px) {
+    .shows{
+        background: white;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        padding: 30px;
+        border: 8px solid var(--yellow);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
